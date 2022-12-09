@@ -1,0 +1,50 @@
+﻿<Window x:Class="SectetDedMoroz.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SectetDedMoroz"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="400">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Участники"></Label>
+
+        <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+                 ItemsSource="{Binding Group.Players}" SelectedItem="{Binding SelectPlayer}"></ListBox>
+
+        <Button Grid.Row="2" Grid.Column="0" Content="Добавить" Name="ButtonAddPlayer" Click="ButtonAddPlayer_Click"></Button>
+        <Button Grid.Row="2" Grid.Column="1" Content="Изменить" Name="ButtonCreatePlayer" Click="ButtonCreatePlayer_Click"></Button>
+        <Button Grid.Row="2" Grid.Column="2" Content="Удалить" Name="ButtonDeletePlayer" Click="ButtonDeletePlayer_Click"></Button>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Запрещенные пары"></Label>
+        
+        <ListBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
+                 ItemsSource="{Binding Group.BannedPairs}" SelectedItem="{Binding SelectBannedPair}"></ListBox>
+
+
+        <Button Grid.Row="5" Grid.Column="0" Content="Добавить" Name="ButtonAddBannedPair" Click="ButtonAddBannedPair_Click"></Button>
+        <Button Grid.Row="5" Grid.Column="1" Content="Изменить" Name="ButtonCreateBannedPair" Click="ButtonCreateBannedPair_Click"></Button>
+        <Button Grid.Row="5" Grid.Column="2" Content="Удалить" Name="ButtonDeleteBannedPair" Click="ButtonDeleteBannedPair_Click"></Button>
+
+        <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Margin="5,5,5,5"
+                Content="Отправить" Name="ButtonSend" Click="ButtonSend_Click"></Button>
+        
+    </Grid>
+</Window>

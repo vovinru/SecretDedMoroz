@@ -1,0 +1,33 @@
+﻿<Window x:Class="SectetDedMoroz.WindowBannedPair"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SectetDedMoroz"
+        mc:Ignorable="d"
+        Title="WindowBannedPair" Height="150" Width="300"
+        WindowStartupLocation="CenterOwner">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Имя"></Label>
+        <ComboBox Grid.Row="0" Grid.Column="1" SelectedItem="{Binding SelectPlayer1}" ItemsSource="{Binding Players}"></ComboBox>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Имя"></Label>
+        <ComboBox Grid.Row="1" Grid.Column="1" SelectedItem="{Binding SelectPlayer2}" ItemsSource="{Binding Players}"></ComboBox>
+
+        <Button Grid.Row="2" Grid.Column="0" Content="Сохранить" Name="ButtonSave" Click="ButtonSave_Click"></Button>
+        <Button Grid.Row="2" Grid.Column="1" Content="Отмена" Name="ButtonCancel" Click="ButtonCancel_Click"></Button>
+
+    </Grid>
+</Window>
